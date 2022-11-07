@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --bg: #C7E7DC;
+    --body-text-color:#3D3D3D;
+    --link-hover:#0051dd;
+    --title-color:#AC57E6;
+    --main-blue:#4C84E6;
+    --headings-font-family:'Libre Baskerville', serif;
+    --body-font-family:'Noto Sans', sans-serif;
+} 
+
+html {
+    font-size: 18px;
+}
+
+body{
+    background-color: var(--bg);
+}
+
+h2{
+    line-height: 1rem;
+}
+
+/* Skip to content */
+a.skip{
+    font-family: var(--headings-font-family);
+    color: var(--title-color);
+    background: white;
+    left: 0;
+    padding: 6px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+    position:absolute;
+    top:-40px;
+}
+  
+  a.skip:focus{
+    position:absolute;
+    top:20px;
+}
+
+/* navigation */
+header{
+    background-color: var(--main-blue);
+    margin-bottom:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ul{
+    list-style: none;
+}
+.nav_links {
+    padding: 0;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nav_item{
+    margin-bottom: 6px;
+}
+.nav_item a{
+    font-family: var(--headings-font-family);
+    padding: 10px;
+    color: white;
+}
+.nav_item a:hover, a:focus{
+    font-size: 1.2rem;
+    text-decoration: underline;
+    -webkit-text-decoration-style: dotted;
+            text-decoration-style: dotted;
+}
+
+/*home page*/
+.mainhomepage{
+    background-image: url(../img/back.png);
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*about page*/
+main.container{
+    text-align: center;
+    width: 100%;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    justify-content:center;
+    align-items:center;
+}
+
+img {
+    display: inline;
+    max-height: 300px;
+}
+
+.aboutimg1{
+    grid-area: 1/1/1/1;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+}
+
+.introduction{
+    text-align: center;
+    justify-content:center;
+    align-items:center;
+}
+
+.aboutname{
+    text-align: center;
+}
+
+.aboutbox{
+    grid-area: 1 / 2 / 1 / 2;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyword{
+    text-align: center;
+}
+
+.keyword-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto;
+}
+
+.keyword-blue {
+    border: 1px solid var(--main-blue);
+    background-color: var(--main-blue);
+}
+
+.keyword-pink {
+    border: 1px solid var(--title-color);
+    background-color: var(--title-color);
+}
+
+.keyword-blue, .keyword-pink {
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin: 5px;
+    border-radius: 100px;
+}
+
+h3 {
+    display: inline;
+    font-size: 1rem;
+    color: var(--title-color);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+}
+
+/*gallery*/
+.portfolio{
+    text-align: center;
+}
+
+.gallery{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.work img{
+    max-width: 80%;
+}
+
+
+/*media screen*/
+@media screen and (min-width: 480px) {
+    header{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav_links {
+        margin: 7px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    header{
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    .nav_links {
+        margin: 7px;
+        flex-direction: row;
+        justify-content: space-between;
+        justify-items: space-between;
+    }
+}
