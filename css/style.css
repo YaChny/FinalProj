@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-    --bg: #C7E7DC;
+    --bg: white;
+    --purple:#AC27EB;
     --body-text-color:#3D3D3D;
-    --link-hover:#0051dd;
-    --title-color:#AC57E6;
-    --main-blue:#4C84E6;
+    --link-hover:#AC27EB;
+    --title-color:#5100EB;
+    --main-purple:#391F69;
     --headings-font-family:'Libre Baskerville', serif;
     --body-font-family:'Noto Sans', sans-serif;
 } 
@@ -36,44 +37,75 @@ a.skip{
     top:-40px;
 }
   
-  a.skip:focus{
+a.skip:focus{
     position:absolute;
     top:20px;
 }
 
 /* navigation */
 header{
-    background-color: var(--main-blue);
-    margin-bottom:20px;
-    display: flex;
-    flex-direction: column;
+    position: sticky;
+    top: 0;
     justify-content: center;
-    align-items: center;
-}
-ul{
-    list-style: none;
+    margin-bottom:20px;
 }
 .nav_links {
-    padding: 0;
-    margin: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: black;
+    overflow: hidden;
 }
-.nav_item{
-    margin-bottom: 6px;
-}
-.nav_item a{
+.nav_links a,.icon{
     font-family: var(--headings-font-family);
-    padding: 10px;
-    color: white;
+    float: left;
+    display: inline;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 12px 14px;
+    text-decoration: none;
+    font-size: 1.1rem;
 }
-.nav_item a:hover, a:focus{
-    font-size: 1.2rem;
+.nav_links .icon{
+    color:white;
+}
+.nav_links a:hover,.icon:hover{
+    background-color: #AC27EB;
+    color: white;
     text-decoration: underline;
     -webkit-text-decoration-style: dotted;
             text-decoration-style: dotted;
+}
+.nav_links a:focus,.icon:focus{
+    background-color: #AC27EB;
+    color: white;
+    text-decoration: underline;
+    -webkit-text-decoration-style: dotted;
+            text-decoration-style: dotted;
+}
+.nav_links a.active,.icon.active{
+    color:white;
+    background-color: #AC27EB;
+}
+/* .nav_links a:not(:first-child) {
+    display: none;
+} */
+.nav_links a:not(.active) {
+    display: none;
+}
+.nav_links .icon {
+  float: right;
+  display: block;
+}
+.nav_links.responsive {
+    position: relative;
+}
+.nav_links.responsive .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.nav_links.responsive a,.icon {
+  float: none;
+  display: block;
+  text-align: left;
 }
 
 /*home page*/
@@ -85,6 +117,7 @@ ul{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 
 /*about page*/
 main.container{
@@ -137,8 +170,8 @@ img {
 }
 
 .keyword-blue {
-    border: 1px solid var(--main-blue);
-    background-color: var(--main-blue);
+    border: 1px solid var(--main-purple);
+    background-color: var(--main-purple);
 }
 
 .keyword-pink {
@@ -191,7 +224,6 @@ h3 {
         align-items: center;
     }
     .nav_links {
-        margin: 7px;
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -199,15 +231,35 @@ h3 {
 }
 
 @media screen and (min-width: 900px) {
-    header{
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: flex-end;
-    }
     .nav_links {
-        margin: 7px;
-        flex-direction: row;
-        justify-content: space-between;
-        justify-items: space-between;
+        background-color: black;
+        overflow: hidden;
+    }
+    .nav_links a{
+        font-family: var(--headings-font-family);
+        float: left;
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-align: center;
+        padding: 12px 14px;
+        text-decoration: none;
+        font-size: 1.1rem;
+    }
+    .nav_links.responsive .icon {
+      display: none;
+    }
+    .nav_links.responsive {
+        position: relative;
+    }
+    .nav_links.responsive a {
+      float: left;
+      display: block;
+      text-align: left;
+    }
+    .nav_links a:not(.active) {
+        display:block;
+    }
+    .nav_links .icon {
+        display: none;
     }
 }
